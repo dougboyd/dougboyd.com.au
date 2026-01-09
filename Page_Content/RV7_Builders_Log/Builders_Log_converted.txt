@@ -1,0 +1,97 @@
+Saturday, Oct 11, 2025
+Have decided to restart the build and pull everything out of storage. What a mess. Dust, grime, and mouse poo. 
+
+Made the decision to start again as I’ve now got all the parts for the emp. Researched primer systems and purchased Stewart Systems Ekoclean, EkoEtch, and EkoPrime. Still need to configure air compressor and get paint gun, and paint lid.
+
+Paint Lid: https://www.rockler.com/mixing-mate-paint-lid-gallon-size-stir-pour-and-store?gclid=CjwKCAiAn5uOBhADEiwA_pZwcBq9ZgY7B7YACAvMydY-k5CUSKbBVFt0CZduRUO_kcPMKXz5WeeleBoCokUQAvD_BwE
+
+Paint Gun System: 3M Accuspray Paint Spray Gun System with PPS 2.0, 26580
+
+Spent three hours clearing and moving in the garage
+
+Time: 3 hours
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+
+Sunday, Oct 12, 2025
+Starting on the Rudder…looks like I’ve got all the backrivetted stiffeners in place, and am now about to RTFM and isolate the required parts for cleaning/work.
+
+The shop as it sits now.
+
+
+
+
+Was working on the rudder….specifically, R-904 and R-902. The “enlarge the hole in the flange” completely screwed me. I tried to do it with my horrible Ozito, thinking a battery powered drill would be fine (after not be able to mount it on my drill press). Alas, it munged the part and ripped the hole.
+
+Ugh.
+
+Fortunately, I had a spare 904 and 902. Even more fortunate, I had Ian Warburton at close call. An hour later, I had my aircompressor hooked up, had looked at a few online pics, and managed to brace/step drill the piece in six different steps. 
+
+
+Looking at R-917, I need to fabricate from the stock which was provided. Fortunately, I’ve learned that EVERYTHING with this damned thing needs to be checked online…the stock provided is actually 3 different thicknesses. And I’m playing with parts from two different builds, split by 20 years.
+
+Ugh.
+
+Got out the micrometer and started working it all out. Sorted now.
+
+
+
+Sunday, Oct 19, 2025
+It’s pretty amazing how much time is spent just moving things around…I started the day by taking a desk out of the downstairs office and shifting the remaining two around. Moved one of the wire shelf racks in from the garage, and then sorted the remaining empennage parts, along with the skins, from the shop into the storage racks. 
+
+Once done, I 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+October 25, 2025
+Back to work on the Rudder, page 6-6 on the plans. Last week, I got the skins clecoed on. Just finished drilling all skins to #40, including the trailing edge. 
+
+
+
+Here’s the R-710, pre-trim and fit.
+
+
+
+And here’s the final fit…this cut was deceiving and I’d recommend reading as much about it as possible before starting to remove material. The gist of the danger is this – if the cut line is too far in, you’ll not have enough space for the rivets which need to come through from the skins. 
+
+
+Next step was to fabricate the R-918 bottom attach strips. Nothing unusual…just follow the instructions. Of interest was my need to go out and purchase an imperial ruler. 
+
+Here’s a single attach strip, after being drilled.
+October 26, 2025
+Spent half an hour cleaning the shop…and then it’s time to disassemble the rudder in prep of the dimple/deburr/etch/clean/prime before final assembly. Need to do some research on the trailing edge as well.
+
+
+Fully disassembled. Loads of swarth and sharp edges. Skins first.
+
+
+Pulled the dimpling rig out and did both skins before realizing that I should have deburred first. <sigh>. On close inspection, no damage was done.

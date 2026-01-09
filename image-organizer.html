@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Organizer - Builder's Log</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+        .image-item {
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-sm);
+            background: var(--color-background);
+        }
+        .image-item img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+        }
+        .image-item p {
+            margin-top: var(--spacing-xs);
+            font-size: 0.875rem;
+            color: var(--color-text-light);
+            text-align: center;
+        }
+        .instructions {
+            background: var(--color-background-alt);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            margin-bottom: var(--spacing-lg);
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Doug Boyd</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="rv7-builders-log.html" class="nav-link">RV7 Builder's Log</a></li>
+                <li><a href="fitness.html" class="nav-link">Fitness</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Image Organizer</h1>
+                <p class="page-subtitle">Extracted Builder's Log Images</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <div class="instructions">
+                    <h2>Instructions</h2>
+                    <p>Below are all 23 images extracted from your Builder's Log. Please review them and let me know which images belong to which log entry:</p>
+                    <ul>
+                        <li><strong>October 11, 2025</strong> - Restart and Preparation</li>
+                        <li><strong>October 12, 2025</strong> - Rudder Work (shop photo, R-904/R-902 work, R-917)</li>
+                        <li><strong>October 19, 2025</strong> - Organization and Setup</li>
+                    </ul>
+                </div>
+
+                <div class="image-grid">
+                    <div class="image-item"><img src="images/builders-log/image1.jpg" alt="Image 1"><p>image1.jpg</p></div>
+                    <div class="image-item"><img src="images/builders-log/image2.jpg" alt="Image 2"><p>image2.jpg</p></div>
+                    <div class="image-item"><img src="images/builders-log/image3.jpg" alt="Image 3"><p>image3.jpg</p></div>
+                    <div class="image-item"><img src="images/builders-log/image4.jpg" alt="Image 4"><p>image4.jpg</p></div>
+                    <div class="image-item"><img src="images/builders-log/image5.jpg" alt="Image 5"><p>image5.jpg</p></div>
+                    <div class="image-item"><img src="images/builders-log/image6.jpg" alt="Image 6"><p>image6.jpg</p></div>
+                    <div class="image-item"><img src="images/builders-log/image7.jpg" alt="Image 7"><p>image7.jpg</p></div>
+                    <div class="image-item"><img src="images/builders-log/image8.jpg" alt="Image 8"><p>image8.jpg</p></div>
+                    <div class="image-item"><img src="images/builders-log/image9.jpg" alt="Image 9"><p>image9.jpg</p></div>
+                    <div class="image-item"><img src="images/builders-log/image10.jpg" alt="Image 10"><p>image10.jpg</p></div>
+                    <div class="image-item"><img src="images/builders-log/image11.jpg" alt="Image 11"><p>image11.jpg</p></div>
+                    <div class="image-item"><img src="images/builders-log/image12.jpg" alt="Image 12"><p>image12.jpg</p></div>
+                    <div class="image-item"><img src="images/builders-log/image13.jpg" alt="Image 13"><p>image13.jpg</p></div>
+                    <div class="image-item"><img src="images/builders-log/image14.jpg" alt="Image 14"><p>image14.jpg</p></div>
+                    <div class="image-item"><img src="images/builders-log/image15.jpg" alt="Image 15"><p>image15.jpg</p></div>
+                    <div class="image-item"><img src="images/builders-log/image16.jpg" alt="Image 16"><p>image16.jpg</p></div>
+                    <div class="image-item"><img src="images/builders-log/image17.jpg" alt="Image 17"><p>image17.jpg</p></div>
+                    <div class="image-item"><img src="images/builders-log/image18.jpg" alt="Image 18"><p>image18.jpg</p></div>
+                    <div class="image-item"><img src="images/builders-log/image19.jpg" alt="Image 19"><p>image19.jpg</p></div>
+                    <div class="image-item"><img src="images/builders-log/image20.jpg" alt="Image 20"><p>image20.jpg</p></div>
+                    <div class="image-item"><img src="images/builders-log/image21.jpg" alt="Image 21"><p>image21.jpg</p></div>
+                    <div class="image-item"><img src="images/builders-log/image22.jpg" alt="Image 22"><p>image22.jpg</p></div>
+                    <div class="image-item"><img src="images/builders-log/image23.jpg" alt="Image 23"><p>image23.jpg</p></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 Doug Boyd. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
