@@ -161,6 +161,9 @@ send_build_notification() {
     echo ""
     echo -e "${BLUE}Sending email notification to subscribers...${NC}"
 
+    # Note: Buttondown API requires specific email format
+    # Using /v1/emails endpoint to send draft email
+    # Adjust format based on Buttondown API documentation if needed
     local subject="New Build: dougboyd.com.au Updated"
     local body="The site has been regenerated with new content and/or design. Check it out at https://www.dougboyd.com.au
 
@@ -178,8 +181,68 @@ Environment: $env"
     if [ "$http_code" = "201" ] || [ "$http_code" = "200" ]; then
         echo -e "${GREEN}✓ Email notification sent successfully${NC}"
     else
-        echo -e "${RED}✗ Failed to send email notification (HTTP $http_code)${NC}"
+        echo -e "${YELLOW}⚠️  Email notification failed (HTTP $http_code)${NC}"
+        echo -e "${YELLOW}   This is non-critical - deployment was successful${NC}"
+        echo -e "${YELLOW}   Check Buttondown API configuration if notifications are needed${NC}"
+        # Note: Common issues:
+        # - HTTP 400: Invalid request format or missing required fields
+        # - Check Buttondown API docs for correct endpoint and payload format
+        # - May need to use /v1/emails/draft or different endpoint
     fi
+}
+
+# Function to commit and push to git
+commit_and_push() {
+    local env=$1
+
+    echo ""
+    echo -e "${BLUE}Committing changes to git repository...${NC}"
+
+    # Check if we're in a git repository
+    if ! git rev-parse --git-dir > /dev/null 2>&1; then
+        echo -e "${YELLOW}⚠️  Not a git repository. Skipping git commit.${NC}"
+        return
+    fi
+
+    # Check if there are any changes to commit
+    if git diff --quiet && git diff --cached --quiet; then
+        echo -e "${YELLOW}⚠️  No changes to commit.${NC}"
+        return
+    fi
+
+    # Get current timestamp for commit message
+    local timestamp=$(date '+%B %d, %Y at %H:%M %Z')
+    local commit_msg="Site build and deployment - $env
+
+Generated: $timestamp
+Deployed to: $env environment
+
+🤖 Generated with Claude Code (https://claude.com/claude-code)
+
+Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>"
+
+    # Stage all changes
+    echo "Staging all changes..."
+    git add -A
+
+    # Commit with message
+    echo "Creating commit..."
+    git commit -m "$(cat <<EOF
+$commit_msg
+EOF
+)" || {
+        echo -e "${YELLOW}⚠️  Git commit failed. This is non-critical.${NC}"
+        return
+    }
+
+    # Push to remote
+    echo "Pushing to remote repository..."
+    git push || {
+        echo -e "${YELLOW}⚠️  Git push failed. You may need to push manually.${NC}"
+        return
+    }
+
+    echo -e "${GREEN}✓ Changes committed and pushed to git repository${NC}"
 }
 
 # Function to show deployment info
@@ -212,6 +275,9 @@ main() {
             create_artifact "dev"
             deploy_to_azure "$DEV_APP_NAME"
 
+            # Commit and push changes to git
+            commit_and_push "DEV"
+
             show_deployment_info "DEV" "https://dev.dougboyd.com.au"
             ;;
 
@@ -236,6 +302,9 @@ main() {
 
             # Send email notification to subscribers
             send_build_notification "PROD"
+
+            # Commit and push changes to git
+            commit_and_push "PROD"
 
             show_deployment_info "PROD" "https://www.dougboyd.com.au"
             ;;

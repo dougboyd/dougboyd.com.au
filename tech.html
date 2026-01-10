@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="How this site works - AI-powered static generation, Azure hosting, and radical transparency">
+    <meta name="description" content="Technical projects, site infrastructure, and development notes">
     <title>Technical Systems - Doug Boyd</title>
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/main.css?v=20260111">
 </head>
 <body>
     <nav class="main-nav">
@@ -30,90 +30,25 @@
     <main>
         <section class="hero">
             <div class="container">
-                <h1 class="hero-title">About This Site</h1>
-                <p class="hero-subtitle">AI Generation / Static HTML / Azure Deployment / Radical Transparency</p>
+                <h1 class="hero-title">Technical Systems</h1>
+                <p class="hero-subtitle">Infrastructure / Development / Documentation</p>
             </div>
         </section>
 
         <section class="content-section">
             <div class="container">
-                <div class="tech-content">
-                    <!-- Creative Writing with AI - Intro -->
-                    <p>This site is a static, flat HTML site. It is generated, in full, every time I run the appropriate command. <em>In full</em> means everything—layout, text, image placement, even the color scheme if the AI feels particularly creative that day. And since the AI agent is in charge of the layout and look, I expect it to get a little nuts every now and again. You're looking at the latest iteration: Terminal Minimalism with deep blues and vibrant cyan-magenta accents. Next build? Could be completely different. That's by design.</p>
+                <div class="content-grid">
+                    <article class="content-card">
+                        <h2>About This Site</h2>
+                        <p>How this site works—AI-powered static generation, Azure hosting, radical transparency, and the complete technical stack. The entire implementation regenerates from scratch with each build. No frameworks, no build systems, just markdown directives and AI agents.</p>
+                        <a href="tech-about.html" class="card-link">Read More →</a>
+                    </article>
 
-                    <p>The whole approach is an experiment in delegation and accountability. I write notes and directives in markdown files. The AI reads those notes, interprets my intent, generates the content, designs the visual system, and outputs complete HTML pages. Sometimes it nails the voice. Sometimes it gets overly formal or tries to polish the rough edges I specifically want to keep. The point isn't perfection—it's process. Every build is a snapshot in time, timestamped and deployed with whatever worked (or didn't) at that moment.</p>
-
-                    <div class="tech-image-feature">
-                        <img src="images/thisSiteVSCode.png" alt="VS Code workspace showing this site's codebase">
-                        <p class="image-caption">My current VS Code workspace—markdown source files, build scripts, and deployment automation</p>
-                    </div>
-
-                    <p>I've written content which falls into three different varieties:</p>
-
-                    <ol class="content-types">
-                        <li><strong>Bullet points/notes with the instruction to have my AI agent generate the text</strong> using a couple of sample files which I've written to capture my particular "voice." I use this for much of my generic article and content generation.</li>
-                        <li><strong>Formal/technical writing</strong> - very similar to point 1, except that I've asked the agent to assume a more formal/technical tone.</li>
-                        <li><strong>No AI intervention</strong> - in this instance, the AI agent is taking my existing text and providing layout/formatting only.</li>
-                    </ol>
-
-                    <!-- No AI - Preserve unchanged -->
-                    <div class="no-ai-section">
-                        <p>It's probably best that I provide a bit of an example...the text above this line on the page is generated from my notes/bullet points. This specific paragraph is written by myself, and is unaltered from the original text. The material below is the technical voice, where I've asked the agent to explain how the site is generated and published, including the environments and technology.</p>
-                    </div>
-
-                    <!-- Formal Writing with AI - Technical explanation -->
-                    <h2>Technical Implementation</h2>
-
-                    <h3>Generation and Build Process</h3>
-                    <p>This site is a static HTML application with no build framework, no dependency management, and no runtime compilation. The generation process occurs entirely through Claude Code, an AI agent with code execution capabilities running locally on my development machine. The agent reads markdown files from the <code>Page_Content/</code> directory, processes embedded directives (Creative Writing with AI, Formal Writing with AI, No AI, Instructional), and outputs complete HTML pages with inline styling references.</p>
-
-                    <p>Every build regenerates the entire site from scratch. This includes the CSS design system, navigation structure, content rendering, image integration, and footer elements. The AI agent maintains context about my writing voice through sample files stored in <code>SampleWriting/</code>, allowing it to generate content that approximates my style for sections marked with creative or formal writing directives. Sections marked "No AI" are preserved verbatim with only HTML formatting applied.</p>
-
-                    <p>The result is a complete static artifact—no server-side processing, no JavaScript frameworks, no GraphQL layers. Just HTML, CSS, and vanilla JavaScript for navigation interactions and scroll animations.</p>
-
-                    <h3>Hosting Infrastructure</h3>
-                    <p>The site deploys to Azure Web Apps using a straightforward architecture designed for simplicity over complexity. Two environments exist: a development instance on Azure's F1 Free tier (accessible at dougboyd-dev.azurewebsites.net) and a production instance on the B1 Basic tier (www.dougboyd.com.au and dougboyd.com.au).</p>
-
-                    <p>The F1 tier provides cost-free testing but lacks custom domain support and SSL certificate provisioning. Production uses the B1 tier (~$13/month) specifically to enable custom domain mapping via GoDaddy CNAME records and Azure-managed SSL certificates with SNI binding. HTTPS redirection, clean URL rewriting (removing .html extensions), custom 404 routing, security headers, and static compression are all handled via a <code>web.config</code> file deployed with the artifact.</p>
-
-                    <h3>Deployment Workflow</h3>
-                    <p>The publishing process follows a linear workflow with minimal abstraction:</p>
-
-                    <ol class="deployment-steps">
-                        <li>Content updates are made to markdown files in <code>Page_Content/</code></li>
-                        <li>The build command (<code>claude code</code> with appropriate prompts) triggers complete site regeneration locally</li>
-                        <li>Deployment occurs via Azure CLI using zip-based artifact upload</li>
-                        <li>Build processes are disabled during deployment (<code>SCM_DO_BUILD_DURING_DEPLOYMENT=false</code>)</li>
-                        <li>The deployment script automatically sends email notifications to subscribers via the Buttondown API</li>
-                    </ol>
-
-                    <p>This approach treats the repository itself as the build artifact. The entire codebase deploys as a single static asset with no runtime transformation or server-side processing. DNS configuration was handled manually through GoDaddy with CNAME records pointing to Azure Web App hostnames, plus TXT and A record verification for SSL certificate provisioning.</p>
-
-                    <h3>Email Notifications and Support</h3>
-                    <p>The site integrates two external services for community engagement. <strong>Buttondown</strong> (buttondown.email) handles email newsletter subscriptions, sending automated notifications to subscribers when new builds are published. The deployment script triggers this notification via Buttondown's API using a securely stored API key in the <code>.env</code> file.</p>
-
-                    <p><strong>Ko-fi</strong> (ko-fi.com/dougboyd) provides a no-fee donation mechanism for visitors who want to support the work. Ko-fi is entirely link-based with no API integration required—the button simply links to my public Ko-fi page where supporters complete transactions via PayPal or Stripe (both managed by Ko-fi's platform).</p>
-
-                    <h3>Source Code and Replication</h3>
-                    <p>The complete implementation is maintained in a public GitHub repository at <a href="https://github.com/dougboyd/dougboyd.com.au" target="_blank" rel="noopener">github.com/dougboyd/dougboyd.com.au</a>. The repository includes markdown source files, deployment scripts, build instructions, and documentation for Buttondown/Ko-fi integration. Anyone interested in replicating this approach has full access to the implementation details.</p>
-
-                    <p>The repository demonstrates that modern static site generation doesn't require complex build pipelines, framework dependencies, or specialized tooling. Just clear content directives, capable AI agents, and straightforward deployment infrastructure. The entire stack is transparent, auditable, and reproducible.</p>
-
-                    <!-- Why this approach -->
-                    <h2>Why This Approach</h2>
-
-                    <p>I've written this site for a handful of reasons:</p>
-
-                    <p><strong>First, to showcase what can be done with a simple understanding of current tools.</strong> You don't need a framework, a build system, or specialized hosting. Just markdown files, clear instructions to an AI agent, and basic Azure infrastructure. The barrier to entry for building something like this is remarkably low if you're willing to experiment and iterate. The complexity isn't in the tooling—it's in the thinking. What do you want to say? How do you want to present it? What stays, what goes, what gets regenerated?</p>
-
-                    <p><strong>Second, to provide a log of my current works</strong>—aircraft construction, software projects, fitness tracking, whatever I'm building at the moment. The site structure forces me to document as I go rather than retroactively polish the narrative. When you commit to regenerating the entire site with each build, you can't fake the timeline. The build log entries are timestamped. The generation dates are real. The design evolution is visible in the git history. It's an exercise in real-time documentation, not retrospective curation.</p>
-
-                    <p><strong>Third, and most important, to hold myself accountable.</strong> As my good mate Eamon Kenny is teaching me, accountability and personal honesty are everything. This site forces both. The build log, the fitness tracking, the project notes—they're all real, timestamped, and publicly visible. No retrospective editing, no airbrushing the failures. When you commit to documenting the process in real-time, you can't pretend the first attempt worked or that the design was obvious from the start.</p>
-
-                    <p>It's uncomfortable sometimes, but it's honest. And that matters more than polish. The rivets that don't sit flush get documented. The parts that get damaged from using the wrong tool get photographed and explained. The builds that take longer than expected get logged with actual hours. The whole point is to capture the work as it happens—mistakes, recoveries, lessons learned, and all.</p>
-
-                    <p>If the site helps someone else navigate a similar problem (how to prime aluminum parts, how to deploy to Azure, how to integrate AI-generated content), that's a bonus. But the primary audience is future me, looking back at what actually happened rather than what I wished had happened.</p>
-
+                    <article class="content-card">
+                        <h2>To Do List</h2>
+                        <p>High-level project roadmap and planned features. Site improvements, fitness tracking, family planner development, and professional projects. This is the working list of what's next—unpolished, unfinished, and completely transparent.</p>
+                        <a href="tech-todo.html" class="card-link">View List →</a>
+                    </article>
                 </div>
             </div>
         </section>
@@ -124,13 +59,13 @@
             <div class="footer-content">
                 <p>&copy; 2026 Doug Boyd. All Rights Reserved.</p>
                 <a href="https://ko-fi.com/dougboyd" class="kofi-button" target="_blank" rel="noopener">
-                    Support This Work ☕
+                    Buy Me a Coffee ☕
                 </a>
-                <p class="footer-date">Generated January 10, 2026</p>
+                <p class="footer-date">Generated January 11, 2026, 06:24 AEDT</p>
             </div>
         </div>
     </footer>
 
-    <script src="scripts/main.js"></script>
+    <script src="scripts/main.js?v=20260111"></script>
 </body>
 </html>
