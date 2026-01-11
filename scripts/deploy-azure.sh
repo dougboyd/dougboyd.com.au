@@ -250,13 +250,18 @@ Deployed: $build_date"
             ;;
     esac
 
-    local response=$(curl -X POST https://api.buttondown.email/v1/emails \
-        -H "Authorization: Token $BUTTONDOWN_API_KEY" \
-        -H "Content-Type: application/json" \
-        -d "{\"subject\": \"$subject\", \"body\": \"$body\"}" \
-        --silent --show-error --write-out "\n%{http_code}")
+    # Use jq to properly construct JSON with multiline body text
+    local response=$(jq -n \
+        --arg subject "$subject" \
+        --arg body "$body" \
+        '{subject: $subject, body: $body}' | \
+        curl -X POST https://api.buttondown.email/v1/emails \
+            -H "Authorization: Token $BUTTONDOWN_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d @- \
+            --silent --show-error --write-out "\n%{http_code}")
 
-    local http_code=$(echo "$response" | tail -n1)
+    local http_code=$(echo "$response" | grep -o '[0-9]\{3\}$')
 
     if [ "$http_code" = "201" ] || [ "$http_code" = "200" ]; then
         echo -e "${GREEN}✓ Email notification sent successfully${NC}"
