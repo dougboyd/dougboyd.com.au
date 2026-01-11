@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X8VGBX1GHX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-X8VGBX1GHX');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="How this site works - AI-powered static generation, Azure hosting, and radical transparency">
@@ -93,6 +102,13 @@
 
                     <p><strong>Ko-fi</strong> (ko-fi.com/dougboyd) provides a no-fee donation mechanism for visitors who want to support the work. Ko-fi is entirely link-based with no API integration required—the button simply links to the public Ko-fi page where supporters complete transactions via PayPal or Stripe (both managed by Ko-fi's platform).</p>
 
+                    <h3>Analytics and Visitor Tracking</h3>
+                    <p>The site uses <strong>Google Analytics 4</strong> (GA4) to track visitor counts, page views, and basic site analytics. The tracking code is embedded in the <code>&lt;head&gt;</code> section of every HTML page, providing insights into which content resonates with visitors and how the site is being used.</p>
+
+                    <p>GA4 implementation is straightforward—a single JavaScript snippet with measurement ID <code>G-X8VGBX1GHX</code> loads asynchronously on every page. The tracking is passive and requires no additional configuration beyond the initial setup. This provides baseline metrics: unique visitors, page views, session duration, traffic sources, and geographic distribution.</p>
+
+                    <p>While GA4 does use cookies for tracking, the data helps inform content decisions—knowing which build log entries get the most views or which technical sections resonate with readers shapes future content priorities. The analytics are purely observational; no personally identifiable information is collected beyond what GA4 captures by default.</p>
+
                     <h3>Source Code and Replication</h3>
                     <p>The complete implementation is maintained in a public GitHub repository at <a href="https://github.com/dougboyd/dougboyd.com.au" target="_blank" rel="noopener">github.com/dougboyd/dougboyd.com.au</a>. The repository includes markdown source files, deployment scripts, build instructions, and documentation for Buttondown/Ko-fi integration. Anyone interested in replicating this approach has full access to the implementation details.</p>
 
@@ -123,7 +139,7 @@
                 <a href="https://ko-fi.com/dougboyd" class="kofi-button" target="_blank" rel="noopener">
                     Buy Me a Coffee ☕
                 </a>
-                <p class="footer-date">Generated January 11, 2026, 06:24 AEDT</p>
+                <p class="footer-date">Generated January 11, 2026, 10:50 AEDT</p>
             </div>
         </div>
     </footer>

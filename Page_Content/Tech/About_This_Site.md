@@ -25,6 +25,7 @@ Explain:
 * the publishing process
 * Buttondown
 * KoFi
+* Google Analytics 4 for visitor tracking
 
 Please include a reference to the git repo if people want to see what/how and use it in their own structures.
 

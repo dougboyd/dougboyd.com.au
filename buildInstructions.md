@@ -128,6 +128,26 @@ Browsers aggressively cache CSS and JavaScript files. Without cache busting, use
 
 The timestamp serves as accountability—it proves the content is current and documents when the build occurred.
 
+### Google Analytics Tracking
+
+**REQUIRED**: Every page MUST include Google Analytics 4 tracking code in the `<head>` section:
+
+```html
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X8VGBX1GHX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-X8VGBX1GHX');
+</script>
+```
+
+**Placement**: Include this snippet immediately after the opening `<head>` tag in every HTML page.
+
+**Purpose**: Track visitor counts, page views, and site analytics.
+
 ### Footer Requirements
 
 At the bottom of every page, include a footer with this exact structure:
