@@ -143,23 +143,6 @@ deploy_to_azure() {
     echo -e "${GREEN}✓ Successfully deployed to $app_name${NC}"
 }
 
-# Function to send email notification (calls separate script)
-send_build_notification() {
-    local env=$1
-
-    echo ""
-
-    # Call the separate notification script
-    if bash "$SCRIPT_DIR/send-notification.sh"; then
-        # Notification sent successfully
-        return 0
-    else
-        # Notification failed - log but don't fail the deployment
-        echo -e "${YELLOW}   This is non-critical - deployment was successful${NC}"
-        return 0
-    fi
-}
-
 # Function to commit and push to git
 commit_and_push() {
     local env=$1
@@ -268,9 +251,6 @@ main() {
 
             create_artifact "prod"
             deploy_to_azure "$PROD_APP_NAME"
-
-            # Send email notification to subscribers
-            send_build_notification "PROD"
 
             # Commit and push changes to git
             commit_and_push "PROD"
