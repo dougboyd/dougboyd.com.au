@@ -155,7 +155,7 @@ body {
 /* Hero Section */
 .hero {
     position: relative;
-    min-height: 60vh;
+    min-height: 24vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -169,11 +169,24 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('../images/background-images/fitness/trail1.jpeg');
+    background-image: url('../images/background-images/generic/dim-walking-to-horse.jpeg');
     background-size: cover;
     background-position: center;
     opacity: 0.15;
     z-index: 0;
+}
+
+/* Page-specific backgrounds */
+body.fitness-page .hero-background {
+    background-image: url('../images/background-images/fitness/trail1.jpeg');
+}
+
+body.rv7-page .hero-background {
+    background-image: url('../images/background-images/rv7/background1.jpeg');
+}
+
+body.everything-else-page .hero-background {
+    background-image: url('../images/background-images/generic/bronte-beach.jpeg');
 }
 
 .hero-content {

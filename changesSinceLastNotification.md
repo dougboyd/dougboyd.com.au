@@ -83,6 +83,40 @@
   - `Running_Log_January_2026.md` - January progress entries
 - New content structure in `Page_Content/Fitness/` directory
 
+## Footer Enhancement
+
+### Subscribe Link Added
+- **NEW**: "Subscribe" link added to footer of all pages
+- Links directly to newsletter signup section on homepage (index.html#newsletter)
+- Makes newsletter subscription easily accessible from any page
+- Positioned between copyright notice and Ko-fi button
+
+### Implementation
+- Homepage uses same-page anchor (#newsletter)
+- All other pages link to index.html#newsletter
+- Subdirectory pages use correct relative paths (../../index.html#newsletter)
+- Newsletter section on homepage tagged with id="newsletter" for anchor linking
+
+### Documentation
+- Updated buildInstructions.md Footer Requirements section
+- Specified Subscribe link as mandatory footer element
+- Documented proper linking patterns for different page depths
+
+## Background Image Organization
+
+### Directory Structure Documented
+- Established section-specific background image directories in buildInstructions.md
+- Fitness pages → use `fitness/` images
+- RV7 pages → use `rv7/` images
+- Everything Else pages → use `everything_else/` images
+- Generic pages → use `generic/` images
+- Fallback pattern: use `generic/` when section-specific images unavailable
+
+### CSS Update
+- Fixed broken background image path in main.css
+- Updated to use `fitness/trail1.jpeg` for fitness page hero sections
+- Maintains 15% opacity for readability
+
 ## Summary
 
-This update adds the first "Everything Else" content to the site with a personal accountability log feature. The major technical enhancement is the click-to-enlarge modal system for all images, which significantly improves the visual browsing experience. The fitness section has been restructured into a scalable monthly archive system that separates the training plan overview from detailed running log entries. All changes maintain the existing "Bright Meadow" design theme established in the January 12 build.
+This update adds the first "Everything Else" content to the site with a personal accountability log feature. The major technical enhancement is the click-to-enlarge modal system for all images, which significantly improves the visual browsing experience. The fitness section has been restructured into a scalable monthly archive system that separates the training plan overview from detailed running log entries. A Subscribe link has been added to all page footers for easy access to newsletter signup. Background image organization has been documented with section-specific directories and fallback patterns. All changes maintain the existing "Bright Meadow" design theme established in the January 12 build.

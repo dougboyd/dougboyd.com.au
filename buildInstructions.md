@@ -47,7 +47,52 @@ For reference, the GIT repo is located at https://github.com/dougboyd/dougboyd.c
 
 **REQUIRED**: Every design MUST incorporate background images from the `./images/background-images/` directory.
 
+**Directory Structure**:
+- `./images/background-images/fitness/` - Images for fitness and training pages
+- `./images/background-images/rv7/` - Images for RV7 aircraft build pages
+- `./images/background-images/generic/` - Images for general pages (home, tech, writings, etc.)
+- `./images/background-images/everything_else/` - Images for miscellaneous project pages
+
+**Implementation Requirements**:
 - Background images should be used in headers, hero sections, or as subtle page backgrounds
+- **Each section MUST use images from its corresponding directory**:
+  - Fitness pages → use `fitness/` images (fallback to `generic/` if no fitness images available)
+  - RV7 pages → use `rv7/` images (fallback to `generic/` if no rv7 images available)
+  - Everything Else pages → use `everything_else/` images (fallback to `generic/` if no everything_else images available)
+  - Other pages (home, tech, writings) → use `generic/` images
+- **If a specific section directory has no suitable images, use images from `generic/` as fallback**
+
+**CSS Implementation Pattern**:
+Use body classes and CSS specificity to assign different background images per section:
+
+```css
+/* Default background for all pages */
+.hero-background {
+    background-image: url('../images/background-images/generic/[filename].jpeg');
+}
+
+/* Page-specific backgrounds override default */
+body.fitness-page .hero-background {
+    background-image: url('../images/background-images/fitness/[filename].jpeg');
+}
+
+body.rv7-page .hero-background {
+    background-image: url('../images/background-images/rv7/[filename].jpeg');
+}
+
+body.everything-else-page .hero-background {
+    background-image: url('../images/background-images/generic/[filename].jpeg');
+}
+```
+
+**HTML Implementation**:
+Add appropriate body class to each page:
+- Fitness pages: `<body class="fitness-page">`
+- RV7 pages: `<body class="rv7-page">`
+- Everything Else pages: `<body class="everything-else-page">`
+- Other pages: `<body>` (uses default generic background)
+
+**Additional CSS Requirements**:
 - CSS must ensure images don't interfere with content readability (use overlays, gradients, blur effects as needed)
 - Images can be applied to specific sections or as full-page backgrounds
 - Consider the design theme when selecting images - they should complement the overall aesthetic
@@ -185,6 +230,7 @@ At the bottom of every page, include a footer with this exact structure:
     <div class="container">
         <div class="footer-content">
             <p>&copy; 2026 Doug Boyd. All Rights Reserved.</p>
+            <a href="index.html#newsletter" class="footer-link">Subscribe</a>
             <a href="https://ko-fi.com/dougboyd" class="kofi-button" target="_blank" rel="noopener">
                 Support This Work ☕
             </a>
@@ -196,10 +242,15 @@ At the bottom of every page, include a footer with this exact structure:
 
 **Required elements:**
 - Copyright notice with current year
+- **Subscribe link** - Links to newsletter section on homepage (index.html#newsletter)
+  - On homepage (index.html): use `href="#newsletter"` for same-page anchor
+  - On all other pages: use `href="index.html#newsletter"` to link to homepage
+  - On subdirectory pages (e.g., builders-log/rudder/): use relative path like `href="../../index.html#newsletter"`
 - Ko-fi support button linking to https://ko-fi.com/dougboyd
 - **Full timestamp** in format: "Generated January 10, 2026, 09:15 AEDT"
 
 **IMPORTANT**:
+- The Subscribe link must always be present and correctly link to the newsletter section
 - The Ko-fi button must always be present in the footer
 - The timestamp must reflect the actual build time
 - Style footer elements to match the current design theme
