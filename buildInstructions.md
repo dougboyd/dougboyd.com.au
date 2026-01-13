@@ -55,6 +55,34 @@ For reference, the GIT repo is located at https://github.com/dougboyd/dougboyd.c
 
 The site should never feel bare or purely text-based. Background images add visual interest and personality to each build.
 
+## Image Modal Treatment
+
+**REQUIRED**: ALL content images on the site (images within `<article>` or `<figure>` tags) MUST have click-to-enlarge modal functionality.
+
+**Implementation Requirements**:
+
+1. **CSS Styling** (in `<head>` or main.css):
+   - Modal overlay with dark semi-transparent background (rgba(0, 0, 0, 0.9))
+   - Centered full-size image display (max 95% viewport width/height)
+   - Close button (×) in top-right corner
+   - Smooth fade-in and zoom animations
+   - Hover effects on thumbnails showing they're clickable (cursor: pointer, subtle scale transform)
+
+2. **JavaScript Functionality**:
+   - Click any content image to open full-size in modal
+   - Click outside image (on overlay) to close
+   - Press Escape key to close
+   - Click close button (×) to close
+   - Prevent background scrolling when modal is open
+
+3. **Reference Implementation**: See `accountability.html` for complete working example with inline styles and JavaScript
+
+**User Experience**:
+- All images should feel interactive and explorable
+- Thumbnails should indicate they're clickable with cursor change and subtle hover effect
+- Modal should feel smooth and polished with appropriate animations
+- Closing the modal should be intuitive (multiple methods available)
+
 ## Content Generation
 
 All content is held in the `Page_Content/` directory. The site follows a **tree structure**:
@@ -223,7 +251,59 @@ The site includes a Buttondown email signup form. When deploying to production, 
 
 - Azure CLI installed: https://docs.microsoft.com/en-us/cli/azure/install-azure-cli
 - Logged into Azure: `az login`
-- Buttondown API key in `.env` file (for email notifications)
+- Buttondown API key in `.env` file (for email notifications - optional)
+
+## Deployment Scripts
+
+The site uses two separate scripts for deployment and notifications:
+
+### `scripts/deploy-azure.sh`
+
+Handles Azure deployment and git operations. Does NOT send email notifications.
+
+**Usage:**
+```bash
+bash scripts/deploy-azure.sh prod    # Deploy to production
+bash scripts/deploy-azure.sh dev     # Deploy to dev (deprecated)
+bash scripts/deploy-azure.sh status  # Check Azure status
+```
+
+**What it does:**
+1. Creates deployment artifact (copies files to temporary directory)
+2. Deploys to Azure Web App via zip deployment
+3. Commits changes to git repository
+4. Pushes to GitHub
+
+### `scripts/send-notification.sh`
+
+Standalone email notification script. Sends Buttondown emails to subscribers.
+
+**Usage:**
+```bash
+bash scripts/send-notification.sh
+```
+
+**What it does:**
+1. Loads Buttondown API key from `.env` file
+2. Generates random email variation (8 different templates)
+3. Sends email to all Buttondown subscribers
+4. Returns exit code 0 (success) or 1 (failure)
+
+**Note:** Email notifications are completely separate from deployment. You can deploy without sending emails, or send emails without deploying.
+
+## Typical Workflow
+
+```bash
+# 1. Regenerate site content (via Claude Code)
+# 2. Deploy to production
+bash scripts/deploy-azure.sh prod
+
+# 3. Send email notification (optional, separate step)
+bash scripts/send-notification.sh
+
+# Or combine both:
+bash scripts/deploy-azure.sh prod && bash scripts/send-notification.sh
+```
 
 ## Dev Environment (Deprecated)
 

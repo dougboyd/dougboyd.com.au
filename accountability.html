@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X8VGBX1GHX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-X8VGBX1GHX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Daily accountability log - tracking progress, activities, and honest self-assessment">
+    <title>Accountability - Doug Boyd</title>
+    <link rel="stylesheet" href="styles/main.css?v=20260112">
+    <style>
+        /* Image modal styles */
+        .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .image-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-modal img {
+            max-width: 95%;
+            max-height: 95%;
+            object-fit: contain;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            animation: zoomIn 0.3s ease-in-out;
+        }
+
+        .image-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .image-modal-close:hover {
+            color: #bbb;
+        }
+
+        /* Make images clickable */
+        article figure img {
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        article figure img:hover {
+            transform: scale(1.02);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="container">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">DOUG BOYD</a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">HOME</a></li>
+                    <li><a href="rv7-builders-log.html" class="nav-link">RV7 LOG</a></li>
+                    <li><a href="fitness.html" class="nav-link">FITNESS</a></li>
+                    <li><a href="tech.html" class="nav-link">TECH</a></li>
+                    <li><a href="writings.html" class="nav-link">WRITINGS</a></li>
+                    <li><a href="everything-else.html" class="nav-link">EVERYTHING ELSE</a></li>
+                </ul>
+                <button class="nav-toggle" aria-label="Toggle navigation">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero-title">Accountability</h1>
+                <p class="hero-subtitle">Daily Log / Progress Tracking / Honest Assessment</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <article class="content-card" style="max-width: 900px; margin: 0 auto;">
+                    <div style="padding: var(--spacing-md); background: rgba(255, 107, 107, 0.1); border-left: 4px solid var(--color-primary); border-radius: var(--radius-sm); margin-bottom: var(--spacing-lg);">
+                        <p style="margin: 0;"><strong>The Word of the Year</strong> (or at least of the moment...I'll certainly try to keep it going for longer than I have in the past)</p>
+                    </div>
+
+                    <p>With that in mind, this will be a daily blog of my activities and footprints. Some might call it a journal, but I'm not of that ilk and will leave journalling to the pros. Or those prone to prose.</p>
+
+                    <p>Pro prosers?</p>
+
+                    <p>Hmmmm.</p>
+
+                    <hr style="margin: var(--spacing-xl) 0; border: none; border-top: 2px solid var(--color-text-light);">
+
+                    <h2 style="color: var(--color-primary); margin-top: var(--spacing-xl);">January 13, 2026</h2>
+
+                    <p>A waste of day from the fitness point of view. I'm still coughing up chunks of lung and just don't feel right walking into an F45 class and throwing weights and germs around. Today was also a non-run day, so I accepted that I should just rest.</p>
+
+                    <p>And by rest, I mean that I was up at 0500 to drive Dim and Chloe to Sydney. To catch you up the story...my daughter, Chloe, has been invited to attend Southern Methodist University in Dallas, Texas (yeee-haaw).</p>
+
+                    <figure style="float: right; margin: 0 0 var(--spacing-md) var(--spacing-lg); max-width: 400px; width: 45%;">
+                        <img src="images/everything_else/chloeFarewell.JPG" alt="The Happy Birthday and Goodbye Dinner for Chloe" style="width: 100%; height: auto; border-radius: var(--radius-md); box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                        <figcaption style="text-align: center; margin-top: var(--spacing-sm); color: var(--color-text-light); font-style: italic; font-size: 0.9em;">The Happy Birthday and Goodbye Dinner for Chloe</figcaption>
+                    </figure>
+
+                    <p>This meant all sorts of fun and games with NCAA and that most August Of Government Agencies, the folks in charge of the US Visa system. Well, last night we finally got the email that Chloe's F1 Student Visa had been approved and was ready for pickup. In Sydney. Because the Embassy here in Canberra was just too convenient.</p>
+
+                    <figure style="float: left; margin: 0 var(--spacing-lg) var(--spacing-md) 0; max-width: 400px; width: 45%;">
+                        <img src="images/everything_else/chloeVisa.JPG" alt="An F1 Student Visa" style="width: 100%; height: auto; border-radius: var(--radius-md); box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                        <figcaption style="text-align: center; margin-top: var(--spacing-sm); color: var(--color-text-light); font-style: italic; font-size: 0.9em;">An F1 Student Visa</figcaption>
+                    </figure>
+
+                    <p>Maybe they were having the drapes redone. Floors polished? Ran out of loo paper and closed to the public?</p>
+
+                    <p>For whatever reason, pickup was in Sydney. And a quick call to SMU later saw that Chloe was to fly to Dallas tomorrow. And Dim was planning on going with for the first handful of days to settle her in. Which brings us to last night, with four large suitcases and a 19 year old trying to shoehorn her life into three of them.</p>
+
+                    <p>This morning came soon enough....packing the truck, feeling our hearts break a little as our little girl said goodbye to her puppies and grew up just a little more. Then the drive to Sydney, the picking up of the Visa, and dropping my girls off at the Rydges by the International terminal.</p>
+
+                    <figure style="float: right; margin: 0 0 var(--spacing-md) var(--spacing-lg); max-width: 400px; width: 45%;">
+                        <img src="images/everything_else/chloeAshGoodBye.JPG" alt="Chloe saying goodbye to Ash" style="width: 100%; height: auto; border-radius: var(--radius-md); box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                        <figcaption style="text-align: center; margin-top: var(--spacing-sm); color: var(--color-text-light); font-style: italic; font-size: 0.9em;">No words...</figcaption>
+                    </figure>
+
+                    <p>And now, I'm in the house with Ash and Rosie prowling the floors. They know she's left, but haven't figured out for how long. Feels like a much bigger house than it did yesterday.</p>
+
+                    <p style="text-align: center; font-style: italic; color: var(--color-text-light); margin: var(--spacing-lg) 0;">...time will pass...</p>
+
+                    <p>And tomorrow morning looks like a great morning for a dawn run.</p>
+
+                    <p>I promise not all of these will be this forelorn. Truly. And I did do something creative and task-worthy today—my Numatx rivet press had developed an oil leak and I sent off the main barrel to the states. AND I rewired the home wifi network!</p>
+
+                    <p>OK, not terribly epic. But at least something.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2026 Doug Boyd. All Rights Reserved.</p>
+                <a href="https://ko-fi.com/dougboyd" class="kofi-button" target="_blank" rel="noopener">
+                    Support This Work ☕
+                </a>
+                <p class="footer-date">Generated January 13, 2026, 19:00 AEDT</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="image-modal">
+        <span class="image-modal-close">&times;</span>
+        <img id="modalImage" src="" alt="">
+    </div>
+
+    <script src="scripts/main.js?v=20260112"></script>
+    <script>
+        // Image modal functionality
+        (function() {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const closeBtn = document.querySelector('.image-modal-close');
+
+            // Add click handlers to all images in article figures
+            document.querySelectorAll('article figure img').forEach(img => {
+                img.addEventListener('click', function() {
+                    modal.classList.add('active');
+                    modalImg.src = this.src;
+                    modalImg.alt = this.alt;
+                    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                });
+            });
+
+            // Close modal on close button click
+            closeBtn.addEventListener('click', closeModal);
+
+            // Close modal on background click
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+
+            // Close modal on Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    closeModal();
+                }
+            });
+
+            function closeModal() {
+                modal.classList.remove('active');
+                document.body.style.overflow = ''; // Restore scrolling
+            }
+        })();
+    </script>
+</body>
+</html>
