@@ -15,69 +15,6 @@
     <meta name="description" content="Doug Boyd's 60k ultramarathon training for his 60th birthday. Training plan, progress updates, and the honest reality of preparing for a ridiculous challenge.">
     <title>Fitness & Training - Doug Boyd</title>
     <link rel="stylesheet" href="styles/main.css?v=20260112">
-    <style>
-        /* Image modal styles */
-        .image-modal {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            animation: fadeIn 0.3s ease-in-out;
-        }
-
-        .image-modal.active {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .image-modal img {
-            max-width: 95%;
-            max-height: 95%;
-            object-fit: contain;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-            animation: zoomIn 0.3s ease-in-out;
-        }
-
-        .image-modal-close {
-            position: absolute;
-            top: 20px;
-            right: 35px;
-            color: #fff;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-
-        .image-modal-close:hover {
-            color: #bbb;
-        }
-
-        /* Make images clickable */
-        .progress-entry figure img {
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-
-        .progress-entry figure img:hover {
-            transform: scale(1.02);
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes zoomIn {
-            from { transform: scale(0.8); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-    </style>
 </head>
 <body>
     <nav class="main-nav">
@@ -114,6 +51,8 @@
             <div class="container">
                 <div class="welcome-content">
                     <p>My 60th birthday is July 7, 2026. In an effort to tempt fate and prove out my stupidity levels, I'm publicly committing to a 60k run on the weekend before. Nothing says "responsible adult decision-making" quite like running an ultramarathon distance on questionable trails in the middle of a Canberra winter. But here we are.</p>
+
+                    <p>Here's a link to my <a href="#running-log-archives" style="color: var(--color-primary); font-weight: 600; text-decoration: underline;">current training log</a>.</p>
 
                     <p>This page documents the entire training journey—the plan, the progress, the wins, and the inevitable moments where I question every life choice that led me here. Real-time updates after every run. No filtered highlights, no motivational platitudes, just the honest accounting of what it takes to prepare for something this ridiculous when you're pushing 60 and still trying to maintain some semblance of sanity.</p>
 
@@ -222,96 +161,28 @@
             </div>
         </section>
 
-        <section class="progress-section">
+        <section class="progress-section" id="running-log-archives">
             <div class="container">
-                <h2 class="text-center mb-lg" style="color: var(--color-primary-dark); font-size: 2.5rem; font-family: var(--font-display);">Progress Updates</h2>
+                <h2 class="text-center mb-lg" style="color: var(--color-primary-dark); font-size: 2.5rem; font-family: var(--font-display);">Running Log Archives</h2>
 
-                <div class="progress-entry">
-                    <div class="entry-header">
-                        <h3>Monday, January 12, 2026</h3>
-                        <span class="entry-badge">Week 1</span>
-                    </div>
-                    <div class="entry-content">
-                        <p>Tough run. Midday heat, I'm still feeling a bit sick, and my running form has gone to hell in an F45 handbasket. The run was on the Mt. Ainslie Park Run course—familiar terrain, but nothing feels easy when you're moving like a geriatric giraffe learning to walk for the first time.</p>
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <p style="text-align: center; margin-bottom: var(--spacing-xl);">Follow my progress through the 15-week training plan. Each month's running log includes detailed entries with stats, photos, and honest assessments of what's working (and what isn't).</p>
 
-                        <p>The combination of high resistance training volume and minimal recent running is showing up exactly where you'd expect: quad soreness, tight hips, and a gait that probably looked more like aggressive hiking than actual running. Add 27°C direct sun and a light breeze that did absolutely nothing useful, and you've got a recipe for questioning your entire training philosophy.</p>
-
-                        <p>But the run got done. That's what matters in Week 1. Not pretty, not fast, not comfortable—just done. Form will come back. Fitness will build. The heat will eventually relent (this is Canberra, after all). For now, it's about putting in the work and documenting the reality: some runs feel great, most feel mediocre, and a few feel like this one.</p>
-
-                        <div class="run-stats">
-                            <div class="stat-item">
-                                <strong>Distance:</strong> 5km
-                            </div>
-                            <div class="stat-item">
-                                <strong>Surface:</strong> Mildly undulating trail
-                            </div>
-                            <div class="stat-item">
-                                <strong>Temperature:</strong> 27°C
-                            </div>
-                            <div class="stat-item">
-                                <strong>Conditions:</strong> Direct sun, light breeze
-                            </div>
-                            <div class="stat-item">
-                                <strong>Body:</strong> Horrible form, sore quads at finish
-                            </div>
+                    <div class="training-phases">
+                        <div class="phase-card">
+                            <h3>January 2026</h3>
+                            <p>Week 1 • Base Building Phase</p>
+                            <p style="margin-top: var(--spacing-md);">
+                                <a href="fitness-january-2026.html" style="display: inline-block; padding: var(--spacing-sm) var(--spacing-lg); background: var(--color-accent); color: var(--color-white); text-decoration: none; border-radius: var(--radius-sm); font-weight: 600; transition: background var(--transition-fast), transform var(--transition-fast);">
+                                    View January Log →
+                                </a>
+                            </p>
                         </div>
-
-                        <p class="strava-link">
-                            <a href="https://www.strava.com/activities/17018813234" target="_blank" rel="noopener">
-                                View on Strava →
-                            </a>
-                        </p>
                     </div>
-                </div>
 
-                <div class="progress-entry">
-                    <div class="entry-header">
-                        <h3>Wednesday, January 14, 2026</h3>
-                        <span class="entry-badge">Week 1</span>
+                    <div class="contact-callout mt-xl">
+                        <p>Reach out to me if you'd like to join in on a run (very slow) or have any other comments. Training partners welcome, commiseration encouraged.</p>
                     </div>
-                    <div class="entry-content">
-                        <figure style="float: right; margin: 0 0 var(--spacing-md) var(--spacing-lg); max-width: 400px; width: 45%;">
-                            <img src="images/fitness/dougSeagullMorning.JPG" alt="Doug running at dawn" style="width: 100%; height: auto; border-radius: var(--radius-md); box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                            <figcaption style="text-align: center; margin-top: var(--spacing-sm); color: var(--color-text-light); font-style: italic; font-size: 0.9em;">Hey! Look at me! I'm Running!!</figcaption>
-                        </figure>
-
-                        <p>Much better running conditions—0530, not hot, no wind. This is what Canberra summer mornings should be: crisp, quiet, and completely empty of sensible people who are still in bed where they belong. I chose to do laps of the "Ken's Chair" loop because of the climb, drop, climb sequence. Good hill work without needing to drive anywhere, which matters when you're trying to get out the door before the sun comes up.</p>
-
-                        <p>Both hamstrings were tight at the start—the kind of tightness that makes you wonder if this run is going to be a short one. But they loosened up by the second kilometer, which is the standard pattern when you're getting back into running after prioritizing strength work. The body remembers how to do this, it just needs a few minutes to figure out what's happening.</p>
-
-                        <p>While form isn't "back" per se, it's much better than Monday's disaster. Less quad-dominant, more natural cadence, fewer moments of wondering if I've forgotten how to run entirely. Progress exists, even when it's incremental and unimpressive. The goal right now isn't to run well—it's to run consistently and let the fitness rebuild itself over time.</p>
-
-                        <div class="run-stats">
-                            <div class="stat-item">
-                                <strong>Distance:</strong> 5.27km
-                            </div>
-                            <div class="stat-item">
-                                <strong>Vertical:</strong> 94m
-                            </div>
-                            <div class="stat-item">
-                                <strong>Surface:</strong> Mildly undulating trail
-                            </div>
-                            <div class="stat-item">
-                                <strong>Temperature:</strong> 16°C
-                            </div>
-                            <div class="stat-item">
-                                <strong>Conditions:</strong> Dawn, no wind
-                            </div>
-                            <div class="stat-item">
-                                <strong>Body:</strong> Tight hamstrings at start, no other issues
-                            </div>
-                        </div>
-
-                        <p class="strava-link">
-                            <a href="https://www.strava.com/activities/17038230557" target="_blank" rel="noopener">
-                                View on Strava →
-                            </a>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="contact-callout mt-xl">
-                    <p>Reach out to me if you'd like to join in on a run (very slow) or have any other comments. Training partners welcome, commiseration encouraged.</p>
                 </div>
             </div>
         </section>
@@ -329,52 +200,6 @@
         </div>
     </footer>
 
-    <!-- Image Modal -->
-    <div id="imageModal" class="image-modal">
-        <span class="image-modal-close">&times;</span>
-        <img id="modalImage" src="" alt="">
-    </div>
-
     <script src="scripts/main.js?v=20260112"></script>
-    <script>
-        // Image modal functionality
-        (function() {
-            const modal = document.getElementById('imageModal');
-            const modalImg = document.getElementById('modalImage');
-            const closeBtn = document.querySelector('.image-modal-close');
-
-            // Add click handlers to all images in progress entries
-            document.querySelectorAll('.progress-entry figure img').forEach(img => {
-                img.addEventListener('click', function() {
-                    modal.classList.add('active');
-                    modalImg.src = this.src;
-                    modalImg.alt = this.alt;
-                    document.body.style.overflow = 'hidden'; // Prevent background scrolling
-                });
-            });
-
-            // Close modal on close button click
-            closeBtn.addEventListener('click', closeModal);
-
-            // Close modal on background click
-            modal.addEventListener('click', function(e) {
-                if (e.target === modal) {
-                    closeModal();
-                }
-            });
-
-            // Close modal on Escape key
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && modal.classList.contains('active')) {
-                    closeModal();
-                }
-            });
-
-            function closeModal() {
-                modal.classList.remove('active');
-                document.body.style.overflow = ''; // Restore scrolling
-            }
-        })();
-    </script>
 </body>
 </html>
