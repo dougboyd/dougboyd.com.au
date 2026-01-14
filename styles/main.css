@@ -482,13 +482,31 @@ body.everything-else-page .hero-background {
 
 /* Footer */
 .main-footer {
+    position: relative;
     background: var(--color-primary-dark);
     color: var(--color-cream);
     padding: var(--spacing-xl) 0 var(--spacing-lg);
     text-align: center;
+    overflow: hidden;
+}
+
+.main-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../images/background-images/generic/bronte-beach.jpeg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.08;
+    z-index: 0;
 }
 
 .footer-content {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
