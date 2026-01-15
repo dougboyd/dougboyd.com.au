@@ -721,6 +721,16 @@ body.everything-else-page .hero-background {
     line-height: 1.7;
 }
 
+/* Writing Content - paragraph spacing for long-form content */
+article.writing-content p {
+    margin-bottom: 1rem !important;
+    line-height: 1.8;
+}
+
+article.writing-content p:last-of-type {
+    margin-bottom: 0 !important;
+}
+
 /* Progress Section */
 .progress-section {
     padding: var(--spacing-xxl) 0;

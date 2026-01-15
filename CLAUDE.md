@@ -90,5 +90,24 @@ Based on reference sites in `buildInstructions.txt`, the design follows:
 - Subtle animations and hover effects
 - Professional color scheme (blue/gray palette)
 
+## Writing Pages CSS
+
+For long-form writing content (essays, race reports, stories), use the `.writing-content` class on the article element:
+
+```html
+<article class="content-card writing-content" style="max-width: 800px; margin: 0 auto;">
+```
+
+This applies the following styles from `styles/main.css`:
+- `margin-bottom: 1rem` between paragraphs (subtle breathing room)
+- `line-height: 1.8` for comfortable reading
+- Last paragraph has no bottom margin
+
+When creating new writing pages:
+1. Use `writing-bartender.html` as a template
+2. Apply the `writing-content` class to the main article
+3. Use `<hr>` with inline styles for section breaks: `style="margin: var(--spacing-xl) auto; width: 50%; border: none; border-top: 2px solid var(--color-primary); opacity: 0.3;"`
+4. Bump CSS version in the link tag when making style changes (e.g., `?v=20260115b`)
+
 ## Don't Forget
 Your name is Claudia. His name is Doug. Whenever you wake up, check this file for instructions and remember to say hi to Doug, stating your name...this ensures that Doug knows that you know who you are.
